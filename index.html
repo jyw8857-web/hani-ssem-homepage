@@ -300,6 +300,20 @@
   .quote-note p{ font-family:'Jua',sans-serif; font-size:1.2rem; line-height:1.65; color:var(--pink-deep); }
   .quote-note span{ display:block; margin-top:14px; font-size:0.85rem; color:var(--ink-faint); font-family:'Gowun Dodum',sans-serif; }
 
+  /* skills */
+  .skills-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media (max-width:700px){ .skills-grid{ grid-template-columns:1fr; } }
+  .skill-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:18px;
+    padding:24px; box-shadow:var(--shadow);
+    border-left:4px solid var(--sky);
+  }
+  .skill-card:nth-child(2){ border-left-color:var(--marigold); }
+  .skill-card:nth-child(3){ border-left-color:var(--pink); }
+  .skill-card:nth-child(4){ border-left-color:var(--sage); }
+  .skill-card h3{ font-size:1.05rem; margin-bottom:8px; }
+  .skill-card p{ font-size:0.92rem; color:var(--ink-soft); }
+
   /* pillar cards */
   .pillars{
     display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
@@ -354,13 +368,40 @@
     font-weight:700; font-size:0.95rem;
     box-shadow:var(--shadow);
     display:flex; align-items:center; gap:8px;
+    text-decoration:none; color:var(--ink);
+    cursor:pointer; transition:transform .15s ease, border-color .15s ease;
   }
+  .highlight-chip:hover, .highlight-chip:focus-visible{ transform:translateY(-2px); border-color:var(--sage); }
   .highlight-chip::before{
     content:""; width:9px; height:9px; border-radius:50%; background:var(--sage);
   }
   .highlight-chip:nth-child(2n)::before{ background:var(--marigold); }
   .highlight-chip:nth-child(3n)::before{ background:var(--sky); }
   .highlight-chip:nth-child(5n)::before{ background:var(--pink); }
+
+  /* popular posts ranking */
+  .post-rank{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+  .post-rank-item a{
+    display:flex; align-items:center; gap:16px;
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:16px 20px; text-decoration:none; color:var(--ink);
+    box-shadow:var(--shadow); transition:transform .15s ease, border-color .15s ease;
+  }
+  .post-rank-item a:hover, .post-rank-item a:focus-visible{ transform:translateX(4px); border-color:var(--pink); }
+  .post-rank-item .rank{
+    font-family:'Jua',sans-serif; font-size:1.3rem; color:var(--pink-deep);
+    width:28px; flex-shrink:0; text-align:center;
+  }
+  .post-rank-item .post-desc{ flex:1; font-size:0.96rem; }
+  .post-rank-item .likes{
+    display:flex; align-items:center; gap:5px; flex-shrink:0;
+    font-weight:800; font-size:0.9rem; color:var(--pink-deep);
+    font-variant-numeric:tabular-nums;
+  }
+  .post-rank-item .likes svg{ width:16px; height:16px; }
+  @media (max-width:560px){
+    .post-rank-item .post-desc{ font-size:0.88rem; }
+  }
 
   /* social proof band */
   .band{
@@ -423,8 +464,10 @@
     <div class="logo"><span class="dot"></span>하니쌤</div>
     <ul class="nav-links">
       <li><a href="#about">소개</a></li>
+      <li><a href="#skills">역량</a></li>
       <li><a href="#pillars">콘텐츠</a></li>
       <li><a href="#highlight">인기 하이라이트</a></li>
+      <li><a href="#popular-posts">인기 게시물</a></li>
       <li><a href="#contact">문의</a></li>
     </ul>
     <a class="btn btn-kakao" href="https://open.kakao.com/o/sIVy1MKi" target="_blank" rel="noopener">
@@ -485,6 +528,34 @@
     </div>
   </section>
 
+  <section id="skills">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow">역량</span>
+        <h2>게시물과 스토리로 확인되는 역량</h2>
+        <p>인스타그램 활동에서 실제로 확인할 수 있는 부분만 담았어요.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>놀이·환경구성 기획력</h3>
+          <p>봄·여름 놀이와 환경구성을 시즌별로 기획해 하이라이트로 정리하고, 개원 준비 과정에서 소품을 직접 제작하는 실행력까지 갖추고 있어요.</p>
+        </div>
+        <div class="skill-card">
+          <h3>AI 활용 업무 효율화</h3>
+          <p>ChatGPT 같은 AI 도구로 보육일지·계획안 업무를 가볍게 만드는 방법을 스스로 정리해서 다른 선생님들에게 나눠요.</p>
+        </div>
+        <div class="skill-card">
+          <h3>공감형 커뮤니티 운영</h3>
+          <p>2.3만 명이 넘는 팔로워와 매일 소통하고, 게시물 하나에도 수십 개의 진심 어린 댓글이 달릴 만큼 공감을 이끌어내는 콘텐츠를 만들어요.</p>
+        </div>
+        <div class="skill-card">
+          <h3>커리어 전환 실전 노하우</h3>
+          <p>최근에는 이직·퇴사 준비 체크리스트(경력증명서, 퇴직금·퇴직연금, 인수인계 등)를 직접 정리해 공유하며 실무형 조언 콘텐츠도 만들고 있어요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="pillars" class="band" style="border-top:none;background:transparent;">
     <div class="wrap reveal">
       <div class="section-head">
@@ -531,7 +602,7 @@
           <span>봄 놀이</span>
         </div>
         <div class="highlight-row">
-          <div class="highlight-chip">봄 놀이</div>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18012016361828495/" target="_blank" rel="noopener">봄 놀이</a>
         </div>
       </div>
 
@@ -541,8 +612,8 @@
           <span>여름 놀이</span>
         </div>
         <div class="highlight-row">
-          <div class="highlight-chip">여름놀이</div>
-          <div class="highlight-chip">여름환경구성</div>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/17992941740803248/" target="_blank" rel="noopener">여름놀이</a>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/17848435386495909/" target="_blank" rel="noopener">여름환경구성</a>
         </div>
       </div>
 
@@ -552,10 +623,57 @@
           <span>놀이 외 인기 이야기</span>
         </div>
         <div class="highlight-row">
-          <div class="highlight-chip">투 담임의 장점</div>
-          <div class="highlight-chip">놀이패널</div>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18043437656644907/" target="_blank" rel="noopener">투 담임의 장점</a>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18338602558240981/" target="_blank" rel="noopener">놀이패널</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="popular-posts">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow">실시간 인기 게시물</span>
+        <h2>좋아요 많은 순 TOP 5</h2>
+        <p>인스타그램 공개 좋아요 수 기준으로 매일 자동 갱신돼요. 클릭하면 실제 게시물로 이동해요.</p>
+      </div>
+      <ol class="post-rank">
+        <li class="post-rank-item">
+          <a href="https://www.instagram.com/hani_ssem/reel/Dcd14eGyw1r/" target="_blank" rel="noopener">
+            <span class="rank">1</span>
+            <span class="post-desc">개원 준비 중 손수 만든 호랑이 소품 에피소드</span>
+            <span class="likes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>169</span>
+          </a>
+        </li>
+        <li class="post-rank-item">
+          <a href="https://www.instagram.com/hani_ssem/reel/DcbOXQxSfeb/" target="_blank" rel="noopener">
+            <span class="rank">2</span>
+            <span class="post-desc">사직서를 쓰던 날의 소회</span>
+            <span class="likes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>136</span>
+          </a>
+        </li>
+        <li class="post-rank-item">
+          <a href="https://www.instagram.com/hani_ssem/p/DcObNyWlPp-/" target="_blank" rel="noopener">
+            <span class="rank">3</span>
+            <span class="post-desc">새로운 시작을 앞두고 남긴 인사</span>
+            <span class="likes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>125</span>
+          </a>
+        </li>
+        <li class="post-rank-item">
+          <a href="https://www.instagram.com/hani_ssem/p/DcRDbp3lDY9/" target="_blank" rel="noopener">
+            <span class="rank">4</span>
+            <span class="post-desc">퇴사 전 챙겨야 할 서류 체크리스트</span>
+            <span class="likes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>90</span>
+          </a>
+        </li>
+        <li class="post-rank-item">
+          <a href="https://www.instagram.com/hani_ssem/reel/DcgZecdSaLn/" target="_blank" rel="noopener">
+            <span class="rank">5</span>
+            <span class="post-desc">개원 앞두고 바빠진 원장님 컨셉 릴스</span>
+            <span class="likes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>63</span>
+          </a>
+        </li>
+      </ol>
     </div>
   </section>
 
