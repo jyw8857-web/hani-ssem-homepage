@@ -359,7 +359,9 @@
   }
   .season-label svg{ width:20px; height:20px; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
   .season-label.sun{ color:var(--marigold-deep); }
-  .season-label.etc{ color:var(--sky-deep); }
+  .season-label.autumn{ color:var(--pink-deep); }
+  .season-label.winter{ color:var(--sky-deep); }
+  .season-label.etc{ color:var(--ink-soft); }
   .highlight-row{ display:flex; flex-wrap:wrap; gap:14px; }
   .highlight-chip{
     position:relative;
@@ -402,6 +404,33 @@
   @media (max-width:560px){
     .post-rank-item .post-desc{ font-size:0.88rem; }
   }
+
+  /* all-content filter gallery */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; }
+  .filter-btn{
+    background:var(--surface); border:1px solid var(--line); color:var(--ink-soft);
+    font-family:inherit; font-weight:700; font-size:0.88rem;
+    padding:9px 18px; border-radius:999px; cursor:pointer;
+    transition:transform .15s ease, border-color .15s ease, color .15s ease, background .15s ease;
+  }
+  .filter-btn:hover{ border-color:var(--sage); color:var(--ink); }
+  .filter-btn:focus-visible{ outline:2px solid var(--sky-deep); outline-offset:2px; }
+  .filter-btn.is-active{ background:var(--ink); border-color:var(--ink); color:var(--bg); }
+  .content-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:14px;
+  }
+  .content-card{
+    display:flex; flex-direction:column; gap:8px;
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 18px; text-decoration:none; color:var(--ink);
+    box-shadow:var(--shadow); transition:transform .15s ease, border-color .15s ease;
+  }
+  .content-card:hover, .content-card:focus-visible{ transform:translateY(-3px); border-color:var(--pink); }
+  .content-card .content-type{
+    font-size:0.74rem; font-weight:800; letter-spacing:0.02em;
+    color:var(--sky-deep); text-transform:uppercase;
+  }
+  .content-card .content-title{ font-size:0.92rem; line-height:1.5; }
 
   /* social proof band */
   .band{
@@ -468,6 +497,7 @@
       <li><a href="#pillars">콘텐츠</a></li>
       <li><a href="#highlight">인기 하이라이트</a></li>
       <li><a href="#popular-posts">인기 게시물</a></li>
+      <li><a href="#all-content">전체보기</a></li>
       <li><a href="#contact">문의</a></li>
     </ul>
     <a class="btn btn-kakao" href="https://open.kakao.com/o/sIVy1MKi" target="_blank" rel="noopener">
@@ -618,6 +648,26 @@
       </div>
 
       <div class="season-group">
+        <div class="season-label autumn">
+          <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 3c4 2 7 6 7 10a7 7 0 0 1-14 0c0-4 3-8 7-10Z"/><path d="M12 8v13"/></svg>
+          <span>가을 놀이</span>
+        </div>
+        <div class="highlight-row">
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18098153917568838/" target="_blank" rel="noopener">가을놀이</a>
+        </div>
+      </div>
+
+      <div class="season-group">
+        <div class="season-label winter">
+          <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2v20M4 7l16 10M20 7 4 17"/></svg>
+          <span>겨울 놀이</span>
+        </div>
+        <div class="highlight-row">
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18030881714670905/" target="_blank" rel="noopener">겨울놀이</a>
+        </div>
+      </div>
+
+      <div class="season-group">
         <div class="season-label etc">
           <svg viewBox="0 0 24 24" stroke="currentColor"><path d="M4 5c2-1 5-1 7 0v14c-2-1-5-1-7 0V5Z"/><path d="M20 5c-2-1-5-1-7 0v14c2-1 5-1 7 0V5Z"/></svg>
           <span>놀이 외 인기 이야기</span>
@@ -625,6 +675,7 @@
         <div class="highlight-row">
           <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18043437656644907/" target="_blank" rel="noopener">투 담임의 장점</a>
           <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18338602558240981/" target="_blank" rel="noopener">놀이패널</a>
+          <a class="highlight-chip" href="https://www.instagram.com/stories/highlights/18372220870190406/" target="_blank" rel="noopener">교사힐링챌린지</a>
         </div>
       </div>
     </div>
@@ -674,6 +725,45 @@
           </a>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <section id="all-content">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <span class="eyebrow">전체 콘텐츠</span>
+        <h2>인스타그램 콘텐츠 모아보기</h2>
+        <p>로그인 없이 공개적으로 확인되는 하이라이트와 최근 게시물을 카테고리별로 모았어요. 필터를 눌러 골라보고, 클릭하면 실제 콘텐츠로 이동해요.</p>
+      </div>
+      <div class="filter-row" role="tablist">
+        <button class="filter-btn is-active" data-filter="all" type="button">전체</button>
+        <button class="filter-btn" data-filter="play" type="button">놀이</button>
+        <button class="filter-btn" data-filter="env" type="button">환경구성</button>
+        <button class="filter-btn" data-filter="career" type="button">커리어</button>
+        <button class="filter-btn" data-filter="daily" type="button">일상</button>
+      </div>
+      <div class="content-grid">
+        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18012016361828495/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">봄 놀이</span></a>
+        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/17992941740803248/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">여름놀이</span></a>
+        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18098153917568838/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">가을놀이</span></a>
+        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18030881714670905/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">겨울놀이</span></a>
+        <a class="content-card" data-cat="env" href="https://www.instagram.com/stories/highlights/17848435386495909/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">여름환경구성</span></a>
+        <a class="content-card" data-cat="env play" href="https://www.instagram.com/stories/highlights/18338602558240981/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">놀이패널</span></a>
+        <a class="content-card" data-cat="daily" href="https://www.instagram.com/stories/highlights/18043437656644907/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">투 담임의 장점</span></a>
+        <a class="content-card" data-cat="daily" href="https://www.instagram.com/stories/highlights/18372220870190406/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">교사힐링챌린지</span></a>
+        <a class="content-card" data-cat="daily" href="https://www.instagram.com/hani_ssem/reel/DcgZecdSaLn/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">원장님 컨셉 유머 에피소드</span></a>
+        <a class="content-card" data-cat="env daily" href="https://www.instagram.com/hani_ssem/reel/Dcd14eGyw1r/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">개원 준비 중 호랑이 소품 제작기</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcbXiViFO1V/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">어린이집 채용 필수서류 카드뉴스</span></a>
+        <a class="content-card" data-cat="daily" href="https://www.instagram.com/hani_ssem/reel/DcbVNHaS_IQ/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">원장님과의 일상 유머 에피소드</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/reel/DcbOXQxSfeb/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">사직서를 쓰던 날</span></a>
+        <a class="content-card" data-cat="career daily" href="https://www.instagram.com/hani_ssem/reel/DcYxLxgSMFG/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">8년 함께한 짝꿍과의 이별</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcYNTBoFGDp/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">마지막 출근을 마치며</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcRDbp3lDY9/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">퇴사 전 챙겨야 할 서류 체크리스트</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcPO7iQkpxF/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">이직 전 정리해야 할 업무 체크리스트</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcObNyWlPp-/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">새로운 시작을 앞두고 남긴 인사</span></a>
+        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcDAMcWCWm1/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">이직 고민, 그 시작 이야기</span></a>
+        <a class="content-card" data-cat="env daily" href="https://www.instagram.com/hani_ssem/reel/DcBhSfEyGHx/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">개원 준비 소품 에피소드</span></a>
+      </div>
     </div>
   </section>
 
@@ -729,5 +819,21 @@
       });
     }, { threshold: 0.15 });
     els.forEach(function(e){ io.observe(e); });
+  })();
+
+  (function(){
+    var btns = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.content-card');
+    btns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        btns.forEach(function(b){ b.classList.remove('is-active'); });
+        btn.classList.add('is-active');
+        var f = btn.getAttribute('data-filter');
+        cards.forEach(function(card){
+          var cats = (card.getAttribute('data-cat') || '').split(' ');
+          card.style.display = (f === 'all' || cats.indexOf(f) !== -1) ? '' : 'none';
+        });
+      });
+    });
   })();
 </script>
