@@ -416,21 +416,23 @@
   .filter-btn:hover{ border-color:var(--sage); color:var(--ink); }
   .filter-btn:focus-visible{ outline:2px solid var(--sky-deep); outline-offset:2px; }
   .filter-btn.is-active{ background:var(--ink); border-color:var(--ink); color:var(--bg); }
-  .content-grid{
-    display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:14px;
-  }
-  .content-card{
-    display:flex; flex-direction:column; gap:8px;
-    background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:16px 18px; text-decoration:none; color:var(--ink);
+  .caption-list{ display:flex; flex-direction:column; gap:14px; }
+  .caption-card{
+    display:block;
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    padding:20px 22px; text-decoration:none; color:var(--ink);
     box-shadow:var(--shadow); transition:transform .15s ease, border-color .15s ease;
   }
-  .content-card:hover, .content-card:focus-visible{ transform:translateY(-3px); border-color:var(--pink); }
-  .content-card .content-type{
+  .caption-card:hover, .caption-card:focus-visible{ transform:translateY(-2px); border-color:var(--pink); }
+  .caption-meta{ margin-bottom:8px; }
+  .caption-card .content-type{
     font-size:0.74rem; font-weight:800; letter-spacing:0.02em;
     color:var(--sky-deep); text-transform:uppercase;
   }
-  .content-card .content-title{ font-size:0.92rem; line-height:1.5; }
+  .caption-card .caption-text{
+    font-size:0.95rem; line-height:1.75; color:var(--ink);
+    max-width:70ch;
+  }
 
   /* social proof band */
   .band{
@@ -731,38 +733,69 @@
   <section id="all-content">
     <div class="wrap reveal">
       <div class="section-head">
-        <span class="eyebrow">전체 콘텐츠</span>
-        <h2>인스타그램 콘텐츠 모아보기</h2>
-        <p>로그인 없이 공개적으로 확인되는 하이라이트와 최근 게시물을 카테고리별로 모았어요. 필터를 눌러 골라보고, 클릭하면 실제 콘텐츠로 이동해요.</p>
+        <span class="eyebrow">게시물 아카이브</span>
+        <h2>캡션으로 보는 이직 여정</h2>
+        <p>최근 게시물 12개를 실제 캡션 내용을 기준으로 다시 나눠봤어요. 하니쌤이 정해준 분류가 아니라, 캡션을 하나씩 읽고 흐름을 따라 새로 묶은 4단계예요. 버튼을 누르면 해당 캡션이 그대로 나열되고, 클릭하면 원본 게시물로 이동해요.</p>
       </div>
       <div class="filter-row" role="tablist">
         <button class="filter-btn is-active" data-filter="all" type="button">전체</button>
-        <button class="filter-btn" data-filter="play" type="button">놀이</button>
-        <button class="filter-btn" data-filter="env" type="button">환경구성</button>
-        <button class="filter-btn" data-filter="career" type="button">커리어</button>
-        <button class="filter-btn" data-filter="daily" type="button">일상</button>
+        <button class="filter-btn" data-filter="decide" type="button">① 이직 결심</button>
+        <button class="filter-btn" data-filter="prep" type="button">② 실무 체크리스트</button>
+        <button class="filter-btn" data-filter="farewell" type="button">③ 작별 인사</button>
+        <button class="filter-btn" data-filter="newjob" type="button">④ 새 직장 적응기</button>
       </div>
-      <div class="content-grid">
-        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18012016361828495/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">봄 놀이</span></a>
-        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/17992941740803248/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">여름놀이</span></a>
-        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18098153917568838/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">가을놀이</span></a>
-        <a class="content-card" data-cat="play" href="https://www.instagram.com/stories/highlights/18030881714670905/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">겨울놀이</span></a>
-        <a class="content-card" data-cat="env" href="https://www.instagram.com/stories/highlights/17848435386495909/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">여름환경구성</span></a>
-        <a class="content-card" data-cat="env play" href="https://www.instagram.com/stories/highlights/18338602558240981/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">놀이패널</span></a>
-        <a class="content-card" data-cat="daily" href="https://www.instagram.com/stories/highlights/18043437656644907/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">투 담임의 장점</span></a>
-        <a class="content-card" data-cat="daily" href="https://www.instagram.com/stories/highlights/18372220870190406/" target="_blank" rel="noopener"><span class="content-type">하이라이트</span><span class="content-title">교사힐링챌린지</span></a>
-        <a class="content-card" data-cat="daily" href="https://www.instagram.com/hani_ssem/reel/DcgZecdSaLn/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">원장님 컨셉 유머 에피소드</span></a>
-        <a class="content-card" data-cat="env daily" href="https://www.instagram.com/hani_ssem/reel/Dcd14eGyw1r/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">개원 준비 중 호랑이 소품 제작기</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcbXiViFO1V/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">어린이집 채용 필수서류 카드뉴스</span></a>
-        <a class="content-card" data-cat="daily" href="https://www.instagram.com/hani_ssem/reel/DcbVNHaS_IQ/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">원장님과의 일상 유머 에피소드</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/reel/DcbOXQxSfeb/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">사직서를 쓰던 날</span></a>
-        <a class="content-card" data-cat="career daily" href="https://www.instagram.com/hani_ssem/reel/DcYxLxgSMFG/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">8년 함께한 짝꿍과의 이별</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcYNTBoFGDp/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">마지막 출근을 마치며</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcRDbp3lDY9/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">퇴사 전 챙겨야 할 서류 체크리스트</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcPO7iQkpxF/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">이직 전 정리해야 할 업무 체크리스트</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcObNyWlPp-/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">새로운 시작을 앞두고 남긴 인사</span></a>
-        <a class="content-card" data-cat="career" href="https://www.instagram.com/hani_ssem/p/DcDAMcWCWm1/" target="_blank" rel="noopener"><span class="content-type">게시물</span><span class="content-title">이직 고민, 그 시작 이야기</span></a>
-        <a class="content-card" data-cat="env daily" href="https://www.instagram.com/hani_ssem/reel/DcBhSfEyGHx/" target="_blank" rel="noopener"><span class="content-type">릴스</span><span class="content-title">개원 준비 소품 에피소드</span></a>
+      <div class="caption-list">
+        <a class="caption-card" data-cat="decide" href="https://www.instagram.com/hani_ssem/p/DcDAMcWCWm1/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 14일</span></div>
+          <p class="caption-text">"한 곳에서 깊어지는 경력과 새로운 경험으로 넓어지는 경력. 둘 다 분명 값진 경력이라 더 오래 고민했습니다. 그래도 결국, 저는 한 가지를 선택했습니다."</p>
+        </a>
+
+        <a class="caption-card" data-cat="prep" href="https://www.instagram.com/hani_ssem/p/DcbXiViFO1V/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 24일</span></div>
+          <p class="caption-text">"채용 연락을 받고 나면 생각보다 서류 준비부터 바빠지더라고요. 주민등록등본 발급일, 채용신체검사서 유효기간, 보수교육 수료 여부, 자격증·면허증 사본까지 미리 체크해두면 좋아요."</p>
+        </a>
+        <a class="caption-card" data-cat="prep" href="https://www.instagram.com/hani_ssem/p/DcRDbp3lDY9/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 20일</span></div>
+          <p class="caption-text">"퇴사 준비하면서 생각보다 챙길 게 많더라고요. 경력증명서, 교육 수료증, 급여 관련 자료부터 퇴직금·퇴직연금, IRP 계좌까지. 마지막 출근 전에 한 번에 챙겨두세요."</p>
+        </a>
+        <a class="caption-card" data-cat="prep" href="https://www.instagram.com/hani_ssem/p/DcPO7iQkpxF/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 19일</span></div>
+          <p class="caption-text">"이직을 결정한 뒤 퇴사 전 해야 할 일들을 하나씩 정리하고 있습니다. 남은 연차, 마지막 급여, 퇴직금·퇴직연금, 관찰기록·보육일지 인계까지 — 내가 챙길 것과 남겨야 할 것을 구분해서 확인하기."</p>
+        </a>
+
+        <a class="caption-card" data-cat="farewell" href="https://www.instagram.com/hani_ssem/reel/DcbOXQxSfeb/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 24일</span></div>
+          <p class="caption-text">"사직서를 쓰던 날. 오래 고민했던 결정이라 막상 쓰는 순간은 담담했습니다. 평소처럼 곁에 있던 아이를 보니 그제야 실감이 났어요. 이제 다음 장면으로 가보려고 합니다."</p>
+        </a>
+        <a class="caption-card" data-cat="farewell" href="https://www.instagram.com/hani_ssem/reel/DcYxLxgSMFG/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 23일</span></div>
+          <p class="caption-text">"짝꿍이랑 함께하는 진짜 마지막 날. 8년 동안 맨날 붙어 있었더니 이제 직장동료라는 말은 좀 서운하고요. 그냥 내 짝꿍, 내 친구, 내 편. 8년치 희로애락 함께한 우리, 진짜 고생 많았다."</p>
+        </a>
+        <a class="caption-card" data-cat="farewell" href="https://www.instagram.com/hani_ssem/p/DcYNTBoFGDp/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 23일</span></div>
+          <p class="caption-text">"마지막 출근은 생각보다 담담했습니다. 아이들과 웃었던 마지막 하루, 직접 찾아와 주신 부모님, 알림장에 남겨주신 따뜻한 마음까지. 한 챕터를 잘 마무리하고, 새로운 자리에서 다시 시작합니다."</p>
+        </a>
+        <a class="caption-card" data-cat="farewell" href="https://www.instagram.com/hani_ssem/p/DcObNyWlPp-/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">게시물 · 8월 19일</span></div>
+          <p class="caption-text">"떠나는 마음보다 잘 마무리하고 싶은 마음이 더 컸습니다. 견뎌낸 시간도, 배운 시간도, 최선을 다했던 순간도. 이제는 아쉬움보다 담담하게, 가고 싶은 방향을 바라보려고 합니다."</p>
+        </a>
+        <a class="caption-card" data-cat="farewell" href="https://www.instagram.com/hani_ssem/reel/DcBhSfEyGHx/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 14일</span></div>
+          <p class="caption-text">"아이들을 위한 행사였는데 누가 보면 저를 위한 행사인 줄. 요즘은 이런 순간들이 하나씩 마지막이라, 놀 수 있을 때 제대로 놀자 싶었어요. 매번 진심으로 준비해주셨던 대표님, 이 모습도 오늘이 마지막입니다."</p>
+        </a>
+
+        <a class="caption-card" data-cat="newjob" href="https://www.instagram.com/hani_ssem/reel/DcgZecdSaLn/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 26일</span></div>
+          <p class="caption-text">"저희 원장님은요… 성격이 진짜 급합니다ㅋㅋ 제가 하려고 하면 이미 다 하고 계심. 잠깐 안 보이면 "쌤~ 어디 있어요?" 하루에 저를 100번은 찾으시는 듯, 덕분에 편한 건지 바쁜 건지 모르겠습니다."</p>
+        </a>
+        <a class="caption-card" data-cat="newjob" href="https://www.instagram.com/hani_ssem/reel/Dcd14eGyw1r/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 25일</span></div>
+          <p class="caption-text">"개원까지 일주일. 원장님이 안 보이기 시작해서 찾아보니 혼자 송편 빚기 연습 중. 구경만 하려다가 저도 잠깐 합류했습니다. 저 이런 거 하고 싶었습니다ㅋㅋㅋ"</p>
+        </a>
+        <a class="caption-card" data-cat="newjob" href="https://www.instagram.com/hani_ssem/reel/DcbVNHaS_IQ/" target="_blank" rel="noopener">
+          <div class="caption-meta"><span class="content-type">릴스 · 8월 24일</span></div>
+          <p class="caption-text">""제가 버릴게요~!" 말은 제일 먼저 했는데 원장님이 이미 박스 들고 나가시는 중. 정식 출근 전이라 그런가요, 오늘은 교사, 입만 살았습니다ㅋㅋ 9월부터는 진짜 열심히 하겠습니다."</p>
+        </a>
       </div>
     </div>
   </section>
@@ -823,7 +856,7 @@
 
   (function(){
     var btns = document.querySelectorAll('.filter-btn');
-    var cards = document.querySelectorAll('.content-card');
+    var cards = document.querySelectorAll('.caption-card');
     btns.forEach(function(btn){
       btn.addEventListener('click', function(){
         btns.forEach(function(b){ b.classList.remove('is-active'); });
