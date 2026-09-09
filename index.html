@@ -160,7 +160,7 @@
   .nav-links a{
     display:flex; flex-direction:column; align-items:center; gap:4px;
     text-decoration:none; text-align:center; line-height:1.25;
-    padding:4px 2px;
+    padding:4px 2px; white-space:nowrap;
   }
   .nav-links a:hover, .nav-links a:focus-visible{ color:var(--sage-deep); }
   .nav-icon{
@@ -173,7 +173,16 @@
   .nav-icon-sage{ color:var(--sage); }
   .nav-icon-filled{ fill:currentColor; stroke:none; }
   .nav-links a:hover .nav-icon, .nav-links a:focus-visible .nav-icon{ color:var(--sage-deep); }
-  @media (max-width:900px){ .nav-links{ display:none; } }
+  @media (max-width:900px){
+    .nav-row{ flex-wrap:wrap; row-gap:6px; }
+    .nav-links{
+      order:3; width:100%;
+      overflow-x:auto; -webkit-overflow-scrolling:touch;
+      padding-bottom:6px; gap:16px;
+      scrollbar-width:thin;
+    }
+    .nav-links li{ flex-shrink:0; }
+  }
 
   .btn{
     display:inline-flex; align-items:center; gap:8px;
