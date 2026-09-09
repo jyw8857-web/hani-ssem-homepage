@@ -154,12 +154,25 @@
   }
   .logo .dot{ width:8px; height:8px; border-radius:50%; background:var(--sage); display:inline-block; }
   .nav-links{
-    display:flex; gap:28px; list-style:none; margin:0; padding:0;
-    font-size:0.92rem; color:var(--ink-soft);
+    display:flex; gap:20px; list-style:none; margin:0; padding:0;
+    font-size:0.78rem; color:var(--ink-soft);
   }
-  .nav-links a{ text-decoration:none; }
+  .nav-links a{
+    display:flex; flex-direction:column; align-items:center; gap:4px;
+    text-decoration:none; text-align:center; line-height:1.25;
+    padding:4px 2px;
+  }
   .nav-links a:hover, .nav-links a:focus-visible{ color:var(--sage-deep); }
-  @media (max-width:720px){ .nav-links{ display:none; } }
+  .nav-icon{
+    width:20px; height:20px; fill:none; stroke-width:1.7;
+    stroke-linecap:round; stroke-linejoin:round;
+  }
+  .nav-icon-pink{ color:var(--pink); }
+  .nav-icon-marigold{ color:var(--marigold); }
+  .nav-icon-sky{ color:var(--sky); }
+  .nav-icon-sage{ color:var(--sage); }
+  .nav-links a:hover .nav-icon, .nav-links a:focus-visible .nav-icon{ color:var(--sage-deep); }
+  @media (max-width:900px){ .nav-links{ display:none; } }
 
   .btn{
     display:inline-flex; align-items:center; gap:8px;
@@ -553,13 +566,13 @@
   <div class="nav-row">
     <div class="logo"><span class="dot"></span>하니쌤</div>
     <ul class="nav-links">
-      <li><a href="#about">소개</a></li>
-      <li><a href="#skills">역량</a></li>
-      <li><a href="#pillars">콘텐츠</a></li>
-      <li><a href="#highlight">인기 하이라이트</a></li>
-      <li><a href="#popular-posts">인기 게시물</a></li>
-      <li><a href="#all-content">전체보기</a></li>
-      <li><a href="#contact">문의</a></li>
+      <li><a href="#about"><svg class="nav-icon nav-icon-pink" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span>소개</span></a></li>
+      <li><a href="#skills"><svg class="nav-icon nav-icon-marigold" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path d="M12 3l2.3 5 5.7.6-4.3 3.9 1.2 5.5L12 15l-5 3 1.2-5.5L4 8.6 9.7 8Z"/></svg><span>역량</span></a></li>
+      <li><a href="#pillars"><svg class="nav-icon nav-icon-sky" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><rect x="5" y="4" width="12" height="16" rx="1.5"/><path d="M8 9h6M8 13h6M8 17h3"/><path d="M17.5 14.5l2.5-2.5 2 2-2.5 2.5-2-2Z"/></svg><span>콘텐츠</span></a></li>
+      <li><a href="#highlight"><svg class="nav-icon nav-icon-pink" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.2 5 6 5c2.1 0 3.5 1.1 4.2 2.2C10.9 6.1 12.3 5 14.4 5c3.8 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21Z"/></svg><span>인기 하이라이트</span></a></li>
+      <li><a href="#popular-posts"><svg class="nav-icon nav-icon-sage" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path d="M12 21V11"/><path d="M12 12C12 8 9 6 5 6c0 4 3 7 7 7Z"/><path d="M12 12c0-3.5 2.5-5.5 6-5.5c0 3.5-2.5 6-6 6Z"/></svg><span>인기 게시물</span></a></li>
+      <li><a href="#all-content"><svg class="nav-icon nav-icon-pink" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path d="M3 10v4h3l6 4V6l-6 4H3Z"/><path d="M15.5 9.5a3.2 3.2 0 0 1 0 5"/><path d="M18 7.5a6 6 0 0 1 0 9"/></svg><span>전체보기</span></a></li>
+      <li><a href="#contact"><svg class="nav-icon nav-icon-marigold" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 15.5s-3-1.8-3-3.8a1.8 1.8 0 0 1 3-1.4 1.8 1.8 0 0 1 3 1.4c0 2-3 3.8-3 3.8Z"/></svg><span>문의</span></a></li>
     </ul>
     <a class="btn btn-kakao" href="https://open.kakao.com/o/sIVy1MKi" target="_blank" rel="noopener">
       <svg class="bubble-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5C6.75 3.5 2.5 6.86 2.5 11c0 2.64 1.75 4.96 4.4 6.3-.19.72-.7 2.6-.8 3-.12.5.18.5.38.36.16-.1 2.5-1.7 3.52-2.4.65.09 1.32.14 2 .14 5.25 0 9.5-3.36 9.5-7.5s-4.25-7.5-9.5-7.5Z" fill="currentColor" stroke="none"/></svg>
