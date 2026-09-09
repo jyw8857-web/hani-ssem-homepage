@@ -413,8 +413,35 @@
   .caption-card:hover, .caption-card:focus-visible{ transform:translateY(-2px); border-color:var(--pink); }
   .caption-meta{ margin-bottom:8px; }
   .caption-card .content-type{
+    display:inline-flex; align-items:center; gap:5px;
     font-size:0.74rem; font-weight:800; letter-spacing:0.02em;
-    color:var(--sky-deep); text-transform:uppercase;
+    text-transform:uppercase;
+    border-radius:999px; padding:4px 10px 4px 8px;
+  }
+  .content-type::before{
+    content:""; width:12px; height:12px; flex-shrink:0;
+    background-color:currentColor;
+  }
+  .content-type.type-reel{
+    color:var(--pink-deep); background:var(--pink-tint);
+  }
+  .content-type.type-reel::before{
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .content-type.type-post{
+    color:var(--sky-deep); background:var(--sky-tint);
+  }
+  .content-type.type-post::before{
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16v16H4V4zm2 2v9.59l3-3 3 3 5-5V6H6zm2 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16v16H4V4zm2 2v9.59l3-3 3 3 5-5V6H6zm2 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z'/%3E%3C/svg%3E") center/contain no-repeat;
+  }
+  .content-type.type-highlight{
+    color:var(--marigold-deep); background:var(--marigold-tint);
+  }
+  .content-type.type-highlight::before{
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z'/%3E%3C/svg%3E") center/contain no-repeat;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01z'/%3E%3C/svg%3E") center/contain no-repeat;
   }
   .caption-card .caption-text{
     font-size:0.95rem; line-height:1.75; color:var(--ink);
@@ -789,64 +816,64 @@
 
       <div class="caption-list" id="taggedList">
         <a class="caption-card" data-cat="play season" data-season="가을" href="https://www.instagram.com/hani_ssem/reel/DdBvydrJmxy/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">릴스 · 9월 8일</span><span class="season-badge">🍂 가을(여름 놀이 재소환)</span></div>
+          <div class="caption-meta"><span class="content-type type-reel">릴스 · 9월 8일</span><span class="season-badge">🍂 가을(여름 놀이 재소환)</span></div>
           <p class="caption-text">"여름에 했던 아이스팩 놀이, 가을에도 할 수 있을까? 한번 꺼내볼까 해요."</p>
         </a>
         <a class="caption-card" data-cat="season" data-season="가을" href="https://www.instagram.com/hani_ssem/p/Dc9t06Fkspl/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">게시물 · 9월 6일</span><span class="season-badge">🍂 가을</span></div>
+          <div class="caption-meta"><span class="content-type type-post">게시물 · 9월 6일</span><span class="season-badge">🍂 가을</span></div>
           <p class="caption-text">"추석은 우리나라 명절이야 대신, 2세 아이들 눈높이에 맞춰 의성어·의태어 가득한 추석 그림동화를 만들었어요."</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="가을" href="https://www.instagram.com/hani_ssem/p/Dc8aL5slEXB/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">게시물 · 9월 6일</span><span class="season-badge">🍂 가을</span></div>
+          <div class="caption-meta"><span class="content-type type-post">게시물 · 9월 6일</span><span class="season-badge">🍂 가을</span></div>
           <p class="caption-text">"추석놀이, 무엇을 만들었는지보다 어떻게 보고 만지고 느꼈는지가 중요해요. 보자기를 흔들고, 곡물과 송편을 손끝으로 탐색하는 시간."</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="가을" href="https://www.instagram.com/hani_ssem/p/Dc5hVccFMBr/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">게시물 · 9월 5일</span><span class="season-badge">🍂 가을</span></div>
+          <div class="caption-meta"><span class="content-type type-post">게시물 · 9월 5일</span><span class="season-badge">🍂 가을</span></div>
           <p class="caption-text">"달님을 만나러 가는 3일간의 한가위 여행. 첫째 날 전통놀이, 둘째 날 한가위 먹거리, 셋째 날 보름달 놀이."</p>
         </a>
         <a class="caption-card" data-cat="env play" href="https://www.instagram.com/hani_ssem/reel/DcyOLpDShVr/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">릴스 · 9월 2일</span></div>
+          <div class="caption-meta"><span class="content-type type-reel">릴스 · 9월 2일</span></div>
           <p class="caption-text">"아이들 하원하고 드디어 나도 논다ㅋㅋ 신나게 에어바운스 입장!"</p>
         </a>
         <a class="caption-card" data-cat="env" href="https://www.instagram.com/hani_ssem/reel/Dcv98haJNYL/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">릴스 · 9월 1일</span></div>
+          <div class="caption-meta"><span class="content-type type-reel">릴스 · 9월 1일</span></div>
           <p class="caption-text">"개원 첫날부터 이게 무슨 일이죠? 카메라 앞에서 정신없이, 그리고 진심으로 남긴 우리의 첫날 기록."</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="여름" href="https://www.instagram.com/hani_ssem/p/DctXXVZFBNk/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">게시물 · 8월 31일</span><span class="season-badge">☀️ 여름</span></div>
+          <div class="caption-meta"><span class="content-type type-post">게시물 · 8월 31일</span><span class="season-badge">☀️ 여름</span></div>
           <p class="caption-text">"올여름 아이들이 가장 오래 머물렀던 놀이. 붙이고 → 넣고 → 얼리고 → 만지고 → 녹여보기, 나만의 아이스팩 감각놀이."</p>
         </a>
         <a class="caption-card" data-cat="env" href="https://www.instagram.com/hani_ssem/reel/Dcd14eGyw1r/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">릴스 · 8월 25일</span></div>
+          <div class="caption-meta"><span class="content-type type-reel">릴스 · 8월 25일</span></div>
           <p class="caption-text">"개원까지 일주일. 원장님과 함께 밤새 준비한 호랑이 소품 만들기."</p>
         </a>
         <a class="caption-card" data-cat="env" href="https://www.instagram.com/hani_ssem/reel/DcBhSfEyGHx/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">릴스 · 8월 14일</span></div>
+          <div class="caption-meta"><span class="content-type type-reel">릴스 · 8월 14일</span></div>
           <p class="caption-text">"아이들을 위해 정성껏 준비한 정글사파리 행사. 동물 친구들과 사진 찍고 구경하는 특별한 하루."</p>
         </a>
 
         <a class="caption-card" data-cat="play season" data-season="봄" href="https://www.instagram.com/stories/highlights/18012016361828495/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span><span class="season-badge">🌱 봄</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span><span class="season-badge">🌱 봄</span></div>
           <p class="caption-text">봄 놀이 — 시즌별로 기획해 모아둔 봄 놀이 아이디어 모음</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="여름" href="https://www.instagram.com/stories/highlights/17992941740803248/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span><span class="season-badge">☀️ 여름</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span><span class="season-badge">☀️ 여름</span></div>
           <p class="caption-text">여름놀이 — 더운 계절에 실내외에서 바로 해볼 수 있는 여름 놀이 모음</p>
         </a>
         <a class="caption-card" data-cat="env season" data-season="여름" href="https://www.instagram.com/stories/highlights/17848435386495909/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span><span class="season-badge">☀️ 여름</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span><span class="season-badge">☀️ 여름</span></div>
           <p class="caption-text">여름환경구성 — 여름철 교실 환경을 어떻게 꾸몄는지 정리한 기록</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="가을" href="https://www.instagram.com/stories/highlights/18098153917568838/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span><span class="season-badge">🍂 가을</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span><span class="season-badge">🍂 가을</span></div>
           <p class="caption-text">가을놀이 — 가을 분위기를 느낄 수 있는 놀이 아이디어 모음</p>
         </a>
         <a class="caption-card" data-cat="play season" data-season="겨울" href="https://www.instagram.com/stories/highlights/18030881714670905/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span><span class="season-badge">❄️ 겨울</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span><span class="season-badge">❄️ 겨울</span></div>
           <p class="caption-text">겨울놀이 — 추운 계절 실내에서 즐기는 겨울 놀이 모음</p>
         </a>
         <a class="caption-card" data-cat="env play" href="https://www.instagram.com/stories/highlights/18338602558240981/" target="_blank" rel="noopener">
-          <div class="caption-meta"><span class="content-type">하이라이트</span></div>
+          <div class="caption-meta"><span class="content-type type-highlight">하이라이트</span></div>
           <p class="caption-text">놀이패널 — 교실에 설치해 활용하는 놀이패널 환경구성 기록</p>
         </a>
       </div>
